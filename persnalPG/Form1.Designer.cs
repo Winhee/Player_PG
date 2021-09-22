@@ -40,6 +40,12 @@ namespace persnalPG
             this.btserch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,16 +53,10 @@ namespace persnalPG
             this.lbname = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btreset = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -184,6 +184,63 @@ namespace persnalPG
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(521, 19);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 15);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "어쩌고 저쩌고";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(521, 48);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 15);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "겁나 대단한 구장";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(521, 78);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(101, 15);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "무슨시 ㅇㅇ길 11";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(532, 109);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(31, 15);
+            this.linkLabel1.TabIndex = 9;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "클릭";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(276, 67);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 26);
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.label9.AutoEllipsis = true;
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Location = new System.Drawing.Point(458, 150);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(310, 131);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "팀 설명 내용 주절주절";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -247,67 +304,11 @@ namespace persnalPG
             this.btreset.Text = "내용지우기";
             this.btreset.UseVisualStyleBackColor = true;
             // 
-            // label9
-            // 
-            this.label9.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.label9.AutoEllipsis = true;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(458, 150);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(310, 131);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "팀 설명 내용 주절주절";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(276, 67);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 26);
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(532, 109);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(31, 15);
-            this.linkLabel1.TabIndex = 9;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "클릭";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(521, 78);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 15);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "무슨시 ㅇㅇ길 11";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(521, 48);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 15);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "겁나 대단한 구장";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(521, 19);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(83, 15);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "어쩌고 저쩌고";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(795, 620);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
@@ -319,8 +320,8 @@ namespace persnalPG
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
