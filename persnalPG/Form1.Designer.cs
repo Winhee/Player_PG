@@ -159,6 +159,7 @@ namespace persnalPG
             this.Gridshow.RowTemplate.Height = 23;
             this.Gridshow.Size = new System.Drawing.Size(888, 130);
             this.Gridshow.TabIndex = 5;
+            this.Gridshow.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.Gridshow_RowValidated);
             // 
             // groupBox1
             // 
@@ -333,6 +334,7 @@ namespace persnalPG
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Gridshow)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

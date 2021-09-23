@@ -19,38 +19,65 @@ namespace persnalPG
 
     public partial class Form1 : Form
     {
-     
-        public void LoadData()
+
+        private MySqlConnection connection;
+        private MySqlDataAdapter mySqlDataAdapter;
+
+        private void Gridshow_RowValidated(object sender, DataGridViewCellEventArgs e)
         {
-            string sql = "Server=127.0.0.1;Port=3306;Database=player;Uid=root;Pwd=612500;SSLMode=None;";
-            MySqlConnection con = new MySqlConnection(sql);
-            MySqlCommand cmd_db = new MySqlCommand("SELECT * FROM player;", con);
-
-            try
+            DataTable changes = ((DataTable)Gridshow.DataSource).GetChanges();
+            if(changes != null)
             {
-                MySqlDataAdapter sda = new MySqlDataAdapter();
-                sda.SelectCommand = cmd_db;
-                DataTable dbdataset = new DataTable();
-                sda.Fill(dbdataset);
-                BindingSource bSource = new BindingSource();
-
-                bSource.DataSource = dbdataset;
-                Gridshow.DataSource = bSource;
-                sda.Update(dbdataset);
+                MySqlCommandBuilder mcb = new MySqlCommandBuilder(mySqlDataAdapter);
+                mySqlDataAdapter.UpdateCommand = mcb.GetUpdateCommand();
+                ((DataTable)Gridshow.DataSource).AcceptChanges();
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
         }
+        
 
         public Form1()
         {
             InitializeComponent();
-            LoadData();
         }
 
+        private bool OpenConnection()
+        {
+            try
+            {
+                connection.Open();
+                return true;
+            }
+            catch(MySqlException ex)
+            {
+                switch(ex.Number)
+                {
+                    //case 0:
+                    //    MessageBox.Show("서버가 연결되지 않았습니다. Contact Administrator");
+                    //    break;
+                    case 1045:
+                        MessageBox.Show("유저이름/비밀번호가 틀립니다 다시시도하세요");
+                        break;
+                    default:
+                        MessageBox.Show(ex.Message);
+                        break;
+                }
+                return false;
+            }
+        }
+
+        private bool CloseConnection()
+        {
+            try
+            {
+                connection.Close();
+                return true;
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
 
         private void btserch_Click(object sender, EventArgs e)
         {
@@ -193,6 +220,19 @@ namespace persnalPG
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            string strConn = "Server=127.0.0.1;Database=playerpg;Uid=root;Pwd=612500;SSL Mode=None;CharSet=utf8mb4;";
+            connection = new MySqlConnection(strConn);
 
+            if(this.OpenConnection() == true)
+            {
+                mySqlDataAdapter = new MySqlDataAdapter("select * from player", connection);
+                DataSet DS = new DataSet();
+                mySqlDataAdapter.Fill(DS);
+                Gridshow.DataSource = DS.Tables[0];
+                this.CloseConnection();
+            }
+        }
     }
 }
