@@ -66,10 +66,9 @@ namespace persnalPG
             "삼성 라이온즈",
             "SSG 랜더스",
             "한화 이글스"});
-            this.cboTeam.Location = new System.Drawing.Point(17, 146);
-            this.cboTeam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboTeam.Location = new System.Drawing.Point(12, 97);
             this.cboTeam.Name = "cboTeam";
-            this.cboTeam.Size = new System.Drawing.Size(247, 26);
+            this.cboTeam.Size = new System.Drawing.Size(174, 20);
             this.cboTeam.TabIndex = 4;
             this.cboTeam.Text = "구단 선택";
             // 
@@ -79,19 +78,17 @@ namespace persnalPG
             this.cboplayst.Items.AddRange(new object[] {
             "투수",
             "야수"});
-            this.cboplayst.Location = new System.Drawing.Point(17, 230);
-            this.cboplayst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboplayst.Location = new System.Drawing.Point(12, 153);
             this.cboplayst.Name = "cboplayst";
-            this.cboplayst.Size = new System.Drawing.Size(247, 26);
+            this.cboplayst.Size = new System.Drawing.Size(174, 20);
             this.cboplayst.TabIndex = 5;
             this.cboplayst.Text = "선수 유형 선택";
             // 
             // txtname
             // 
-            this.txtname.Location = new System.Drawing.Point(17, 310);
-            this.txtname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtname.Location = new System.Drawing.Point(12, 207);
             this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(247, 28);
+            this.txtname.Size = new System.Drawing.Size(174, 21);
             this.txtname.TabIndex = 9;
             this.txtname.Text = "외국인선수는 선수명(성) 입력";
             this.txtname.Click += new System.EventHandler(this.txtname_Click);
@@ -99,30 +96,27 @@ namespace persnalPG
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 123);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 18);
+            this.label2.Size = new System.Drawing.Size(57, 12);
             this.label2.TabIndex = 6;
             this.label2.Text = "구단 선택";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 284);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(12, 189);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 18);
+            this.label4.Size = new System.Drawing.Size(57, 12);
             this.label4.TabIndex = 7;
             this.label4.Text = "선수 이름";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 202);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 135);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 18);
+            this.label3.Size = new System.Drawing.Size(57, 12);
             this.label3.TabIndex = 8;
             this.label3.Text = "선수 유형";
             // 
@@ -130,8 +124,7 @@ namespace persnalPG
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("휴먼엑스포", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(17, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 30);
             this.label1.TabIndex = 6;
@@ -139,29 +132,26 @@ namespace persnalPG
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(313, 123);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(219, 82);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(189, 228);
+            this.pictureBox1.Size = new System.Drawing.Size(132, 152);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(313, 366);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(219, 244);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 34);
+            this.button1.Size = new System.Drawing.Size(132, 23);
             this.button1.TabIndex = 11;
             this.button1.Text = "사진 찾기";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(313, 410);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(219, 273);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(189, 34);
+            this.button2.Size = new System.Drawing.Size(132, 23);
             this.button2.TabIndex = 11;
             this.button2.Text = "사진 저장";
             this.button2.UseVisualStyleBackColor = true;
@@ -169,101 +159,91 @@ namespace persnalPG
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 459);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(14, 306);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 18);
+            this.label5.Size = new System.Drawing.Size(31, 12);
             this.label5.TabIndex = 7;
-            this.label5.Text = "이번 시즌 WAR";
+            this.label5.Text = "WAR";
             // 
             // txtWAR
             // 
-            this.txtWAR.Location = new System.Drawing.Point(20, 486);
-            this.txtWAR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWAR.Location = new System.Drawing.Point(14, 324);
             this.txtWAR.Name = "txtWAR";
-            this.txtWAR.Size = new System.Drawing.Size(247, 28);
+            this.txtWAR.Size = new System.Drawing.Size(174, 21);
             this.txtWAR.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 538);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(12, 359);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 18);
+            this.label6.Size = new System.Drawing.Size(85, 12);
             this.label6.TabIndex = 7;
-            this.label6.Text = "직전 시즌 WAR";
+            this.label6.Text = "직전 시즌 성적";
             // 
             // txtpastyear
             // 
-            this.txtpastyear.Location = new System.Drawing.Point(17, 566);
-            this.txtpastyear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtpastyear.Location = new System.Drawing.Point(12, 377);
             this.txtpastyear.Name = "txtpastyear";
-            this.txtpastyear.Size = new System.Drawing.Size(247, 28);
+            this.txtpastyear.Size = new System.Drawing.Size(174, 21);
             this.txtpastyear.TabIndex = 9;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 370);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(12, 247);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 18);
+            this.label7.Size = new System.Drawing.Size(17, 12);
             this.label7.TabIndex = 7;
             this.label7.Text = "키";
             // 
             // txthight
             // 
-            this.txthight.Location = new System.Drawing.Point(17, 398);
-            this.txthight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txthight.Location = new System.Drawing.Point(12, 265);
             this.txthight.Name = "txthight";
-            this.txthight.Size = new System.Drawing.Size(120, 28);
+            this.txthight.Size = new System.Drawing.Size(85, 21);
             this.txthight.TabIndex = 9;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(147, 370);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(103, 247);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 18);
+            this.label8.Size = new System.Drawing.Size(41, 12);
             this.label8.TabIndex = 7;
             this.label8.Text = "몸무게";
             // 
             // txtweight
             // 
-            this.txtweight.Location = new System.Drawing.Point(147, 398);
-            this.txtweight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtweight.Location = new System.Drawing.Point(103, 265);
             this.txtweight.Name = "txtweight";
-            this.txtweight.Size = new System.Drawing.Size(120, 28);
+            this.txtweight.Size = new System.Drawing.Size(85, 21);
             this.txtweight.TabIndex = 9;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(371, 622);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Location = new System.Drawing.Point(260, 415);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(149, 34);
+            this.button3.Size = new System.Drawing.Size(104, 23);
             this.button3.TabIndex = 11;
             this.button3.Text = "저장";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(196, 622);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Location = new System.Drawing.Point(137, 415);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(149, 34);
+            this.button4.Size = new System.Drawing.Size(104, 23);
             this.button4.TabIndex = 11;
             this.button4.Text = "네이버 검색";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(537, 675);
+            this.ClientSize = new System.Drawing.Size(376, 450);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -284,7 +264,6 @@ namespace persnalPG
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form2";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
