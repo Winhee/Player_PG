@@ -38,7 +38,7 @@ namespace persnalPG
             this.label4 = new System.Windows.Forms.Label();
             this.txtname = new System.Windows.Forms.TextBox();
             this.btserch = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Gridshow = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbTname = new System.Windows.Forms.Label();
             this.lbFname = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@ namespace persnalPG
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btNew = new System.Windows.Forms.Button();
             this.btreset = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Gridshow)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -114,6 +114,7 @@ namespace persnalPG
             this.cboplayst.FormattingEnabled = true;
             this.cboplayst.Items.AddRange(new object[] {
             "투수",
+            "포수",
             "야수"});
             this.cboplayst.Location = new System.Drawing.Point(12, 127);
             this.cboplayst.Name = "cboplayst";
@@ -149,15 +150,15 @@ namespace persnalPG
             this.btserch.UseVisualStyleBackColor = true;
             this.btserch.Click += new System.EventHandler(this.btserch_Click);
             // 
-            // dataGridView1
+            // Gridshow
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 372);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(888, 130);
-            this.dataGridView1.TabIndex = 5;
+            this.Gridshow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Gridshow.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Gridshow.Location = new System.Drawing.Point(0, 372);
+            this.Gridshow.Name = "Gridshow";
+            this.Gridshow.RowTemplate.Height = 23;
+            this.Gridshow.Size = new System.Drawing.Size(888, 130);
+            this.Gridshow.TabIndex = 5;
             // 
             // groupBox1
             // 
@@ -228,7 +229,7 @@ namespace persnalPG
             // picball
             // 
             this.picball.Image = ((System.Drawing.Image)(resources.GetObject("picball.Image")));
-            this.picball.Location = new System.Drawing.Point(390, 231);
+            this.picball.Location = new System.Drawing.Point(398, 22);
             this.picball.Name = "picball";
             this.picball.Size = new System.Drawing.Size(27, 26);
             this.picball.TabIndex = 8;
@@ -326,13 +327,13 @@ namespace persnalPG
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(888, 502);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Gridshow);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Gridshow)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picball)).EndInit();
@@ -352,7 +353,7 @@ namespace persnalPG
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtname;
         private System.Windows.Forms.Button btserch;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Gridshow;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

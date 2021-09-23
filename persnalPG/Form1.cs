@@ -1,5 +1,4 @@
-﻿using MySqlConnector;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,41 +8,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Azure.Management.Sql.Fluent;
+using MySql.Data.MySqlClient;
+
 
 namespace persnalPG
 {
 
-    //public void DBconn()
-    //{
-    //    string connstr = "Server=127.0.0.1;Port=3306;Database=heehee;Uid=root;Pwd=612500";
-    //    MySqlConnection conn = new MySqlConnection(connstr);
-    //    MySqlCommand cmd = conn.CreateCommand();
-    //    string select = "Select * from player";
-    //    cmd.CommandText = select;
-    //    try
-    //    {
-    //        conn.Open();
-    //    }
-    //    catch(Exception ex)
-    //    {
-    //        MessageBox.Show(ex.Message);
-    //    }
-    //
-    //}
+
 
     public partial class Form1 : Form
     {
+     
+        public void LoadData()
+        {
+            string sql = "Server=127.0.0.1;Port=3306;Database=player;Uid=root;Pwd=612500;SSLMode=None;";
+            MySqlConnection con = new MySqlConnection(sql);
+            MySqlCommand cmd_db = new MySqlCommand("SELECT * FROM player;", con);
 
+            try
+            {
+                MySqlDataAdapter sda = new MySqlDataAdapter();
+                sda.SelectCommand = cmd_db;
+                DataTable dbdataset = new DataTable();
+                sda.Fill(dbdataset);
+                BindingSource bSource = new BindingSource();
 
+                bSource.DataSource = dbdataset;
+                Gridshow.DataSource = bSource;
+                sda.Update(dbdataset);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
 
         public Form1()
         {
             InitializeComponent();
+            LoadData();
         }
+
 
         private void btserch_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
