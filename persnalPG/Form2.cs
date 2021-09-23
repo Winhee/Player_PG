@@ -16,5 +16,10 @@ namespace persnalPG
         {
             InitializeComponent();
         }
+
+        private void txtname_Click(object sender, EventArgs e)
+        {
+            txtname.Text = "";
+        }
     }
 }
