@@ -20,18 +20,10 @@ namespace persnalPG
     public partial class Form1 : Form
     {
 
-        private MySqlConnection connection;
-        private MySqlDataAdapter mySqlDataAdapter;
 
         private void Gridshow_RowValidated(object sender, DataGridViewCellEventArgs e)
         {
-            DataTable changes = ((DataTable)Gridshow.DataSource).GetChanges();
-            if(changes != null)
-            {
-                MySqlCommandBuilder mcb = new MySqlCommandBuilder(mySqlDataAdapter);
-                mySqlDataAdapter.UpdateCommand = mcb.GetUpdateCommand();
-                ((DataTable)Gridshow.DataSource).AcceptChanges();
-            }
+
         }
         
 
@@ -40,48 +32,34 @@ namespace persnalPG
             InitializeComponent();
         }
 
-        private bool OpenConnection()
-        {
-            try
-            {
-                connection.Open();
-                return true;
-            }
-            catch(MySqlException ex)
-            {
-                switch(ex.Number)
-                {
-                    //case 0:
-                    //    MessageBox.Show("서버가 연결되지 않았습니다. Contact Administrator");
-                    //    break;
-                    case 1045:
-                        MessageBox.Show("유저이름/비밀번호가 틀립니다 다시시도하세요");
-                        break;
-                    default:
-                        MessageBox.Show(ex.Message);
-                        break;
-                }
-                return false;
-            }
-        }
-
-        private bool CloseConnection()
-        {
-            try
-            {
-                connection.Close();
-                return true;
-            }
-            catch(MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-        }
+       
 
         private void btserch_Click(object sender, EventArgs e)
         {
-           
+            //SQL DB연결
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = @"Server=localhost;database=PlayerPG; uid=sa; pwd=612500";
+
+            //SQl 명령어
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SELECT TEAM,STYLE,NAME,HIGHT,WEIGHT,THISWAR,WASWAR FROM player WHERE TEAM='"+cboteam.Text+"' AND STYLE='" +cboplayst.Text+"' AND NAME='"+txtname.Text+"'";
+
+            //DataAdapter와 Dataset으로 DB table 불러오기
+            SqlDataAdapter da = new SqlDataAdapter(cmd);    //select구문 넣기
+            DataSet ds = new DataSet();
+            da.Fill(ds, "player");
+
+            //DataGridView에 DB에서 가져온 데이터 뿌리기
+            Gridshow.DataSource = ds;
+            Gridshow.DataMember = "player";
+            this.Gridshow.Columns[0].HeaderText = "구단명"; 
+            this.Gridshow.Columns[1].HeaderText = "선수 유형";
+            this.Gridshow.Columns[2].HeaderText = "이름";
+            this.Gridshow.Columns[3].HeaderText = "키";
+            this.Gridshow.Columns[4].HeaderText = "몸무게";
+            this.Gridshow.Columns[5].HeaderText = "2021년 WAR";
+            this.Gridshow.Columns[6].HeaderText = "2020년 WAR";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -222,17 +200,30 @@ namespace persnalPG
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string strConn = "Server=127.0.0.1;Database=playerpg;Uid=root;Pwd=612500;SSL Mode=None;CharSet=utf8mb4;";
-            connection = new MySqlConnection(strConn);
+            //SQL DB연결
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = @"Server=localhost;database=PlayerPG; uid=sa; pwd=612500";
 
-            if(this.OpenConnection() == true)
-            {
-                mySqlDataAdapter = new MySqlDataAdapter("select * from player", connection);
-                DataSet DS = new DataSet();
-                mySqlDataAdapter.Fill(DS);
-                Gridshow.DataSource = DS.Tables[0];
-                this.CloseConnection();
-            }
+            //SQl 명령어
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SELECT TEAM,STYLE,NAME,HIGHT,WEIGHT,THISWAR,WASWAR FROM player";
+
+            //DataAdapter와 Dataset으로 DB table 불러오기
+            SqlDataAdapter da = new SqlDataAdapter(cmd);    //select구문 넣기
+            DataSet ds = new DataSet();
+            da.Fill(ds, "player");
+
+            //DataGridView에 DB에서 가져온 데이터 뿌리기
+            Gridshow.DataSource = ds;
+            Gridshow.DataMember = "player";
+            this.Gridshow.Columns[0].HeaderText = "구단명"; 
+            this.Gridshow.Columns[1].HeaderText = "선수 유형";
+            this.Gridshow.Columns[2].HeaderText = "이름";
+            this.Gridshow.Columns[3].HeaderText = "키";
+            this.Gridshow.Columns[4].HeaderText = "몸무게";
+            this.Gridshow.Columns[5].HeaderText = "2021년 WAR";
+            this.Gridshow.Columns[6].HeaderText = "2020년 WAR";
         }
     }
 }
