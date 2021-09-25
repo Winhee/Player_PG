@@ -46,6 +46,8 @@ namespace persnalPG
             this.txtweight = new System.Windows.Forms.TextBox();
             this.btSave = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtRL = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cboTeam
@@ -77,7 +79,7 @@ namespace persnalPG
             "야수"});
             this.cboplayst.Location = new System.Drawing.Point(29, 153);
             this.cboplayst.Name = "cboplayst";
-            this.cboplayst.Size = new System.Drawing.Size(210, 20);
+            this.cboplayst.Size = new System.Drawing.Size(104, 20);
             this.cboplayst.TabIndex = 5;
             this.cboplayst.Text = "선수 유형 선택";
             // 
@@ -140,13 +142,13 @@ namespace persnalPG
             // 
             this.txtWAR.Location = new System.Drawing.Point(27, 324);
             this.txtWAR.Name = "txtWAR";
-            this.txtWAR.Size = new System.Drawing.Size(102, 21);
+            this.txtWAR.Size = new System.Drawing.Size(88, 21);
             this.txtWAR.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(153, 306);
+            this.label6.Location = new System.Drawing.Point(143, 306);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 12);
             this.label6.TabIndex = 7;
@@ -154,9 +156,9 @@ namespace persnalPG
             // 
             // txtpastyear
             // 
-            this.txtpastyear.Location = new System.Drawing.Point(153, 324);
+            this.txtpastyear.Location = new System.Drawing.Point(143, 324);
             this.txtpastyear.Name = "txtpastyear";
-            this.txtpastyear.Size = new System.Drawing.Size(86, 21);
+            this.txtpastyear.Size = new System.Drawing.Size(96, 21);
             this.txtpastyear.TabIndex = 9;
             // 
             // label7
@@ -178,7 +180,7 @@ namespace persnalPG
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(153, 247);
+            this.label8.Location = new System.Drawing.Point(141, 247);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 12);
             this.label8.TabIndex = 7;
@@ -186,14 +188,14 @@ namespace persnalPG
             // 
             // txtweight
             // 
-            this.txtweight.Location = new System.Drawing.Point(153, 265);
+            this.txtweight.Location = new System.Drawing.Point(141, 265);
             this.txtweight.Name = "txtweight";
-            this.txtweight.Size = new System.Drawing.Size(85, 21);
+            this.txtweight.Size = new System.Drawing.Size(96, 21);
             this.txtweight.TabIndex = 9;
             // 
             // btSave
             // 
-            this.btSave.Location = new System.Drawing.Point(134, 366);
+            this.btSave.Location = new System.Drawing.Point(140, 366);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(104, 23);
             this.btSave.TabIndex = 11;
@@ -211,21 +213,39 @@ namespace persnalPG
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(143, 135);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 12);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "투타 유형";
+            // 
+            // txtRL
+            // 
+            this.txtRL.Location = new System.Drawing.Point(143, 153);
+            this.txtRL.Name = "txtRL";
+            this.txtRL.Size = new System.Drawing.Size(96, 21);
+            this.txtRL.TabIndex = 9;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(265, 417);
+            this.ClientSize = new System.Drawing.Size(267, 417);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.cboTeam);
             this.Controls.Add(this.cboplayst);
+            this.Controls.Add(this.txtRL);
             this.Controls.Add(this.txtweight);
             this.Controls.Add(this.txthight);
             this.Controls.Add(this.txtpastyear);
             this.Controls.Add(this.txtWAR);
             this.Controls.Add(this.txtname);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
@@ -236,6 +256,7 @@ namespace persnalPG
             this.Controls.Add(this.label3);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +281,7 @@ namespace persnalPG
         private System.Windows.Forms.TextBox txtweight;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtRL;
     }
 }

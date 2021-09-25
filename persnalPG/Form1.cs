@@ -21,12 +21,6 @@ namespace persnalPG
     {
 
 
-        private void Gridshow_RowValidated(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        
-
         public Form1()
         {
             InitializeComponent();
@@ -43,7 +37,7 @@ namespace persnalPG
             //SQl 명령어
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "SELECT TEAM,STYLE,NAME,HIGHT,WEIGHT,THISWAR,WASWAR FROM player WHERE TEAM='"+cboteam.Text+"' AND STYLE='" +cboplayst.Text+"' AND NAME='"+txtname.Text+"'";
+            cmd.CommandText = "SELECT TEAM,STYLE,RLSTYLE,NAME,HIGHT,WEIGHT,THISWAR,WASWAR FROM player WHERE TEAM='"+cboteam.Text+"' AND STYLE='" +cboplayst.Text+"' AND NAME='"+txtname.Text+"'";
 
             //DataAdapter와 Dataset으로 DB table 불러오기
             SqlDataAdapter da = new SqlDataAdapter(cmd);    //select구문 넣기
@@ -55,16 +49,17 @@ namespace persnalPG
             Gridshow.DataMember = "player";
             this.Gridshow.Columns[0].HeaderText = "구단명"; 
             this.Gridshow.Columns[1].HeaderText = "선수 유형";
-            this.Gridshow.Columns[2].HeaderText = "이름";
-            this.Gridshow.Columns[3].HeaderText = "키";
-            this.Gridshow.Columns[4].HeaderText = "몸무게";
-            this.Gridshow.Columns[5].HeaderText = "2021년 WAR";
-            this.Gridshow.Columns[6].HeaderText = "2020년 WAR";
+            this.Gridshow.Columns[2].HeaderText = "투타 유형";
+            this.Gridshow.Columns[3].HeaderText = "이름";
+            this.Gridshow.Columns[4].HeaderText = "키";
+            this.Gridshow.Columns[5].HeaderText = "몸무게";
+            this.Gridshow.Columns[6].HeaderText = "2021년 WAR";
+            this.Gridshow.Columns[7].HeaderText = "2020년 WAR";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            Form2 form2 = new Form2(this);
             form2.ShowDialog();
         }
 
@@ -207,7 +202,7 @@ namespace persnalPG
             //SQl 명령어
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "SELECT TEAM,STYLE,NAME,HIGHT,WEIGHT,THISWAR,WASWAR FROM player";
+            cmd.CommandText = "SELECT TEAM,STYLE,RLSTYLE,NAME,HIGHT,WEIGHT,THISWAR,WASWAR FROM player";
 
             //DataAdapter와 Dataset으로 DB table 불러오기
             SqlDataAdapter da = new SqlDataAdapter(cmd);    //select구문 넣기
@@ -217,13 +212,14 @@ namespace persnalPG
             //DataGridView에 DB에서 가져온 데이터 뿌리기
             Gridshow.DataSource = ds;
             Gridshow.DataMember = "player";
-            this.Gridshow.Columns[0].HeaderText = "구단명"; 
+            this.Gridshow.Columns[0].HeaderText = "구단명";
             this.Gridshow.Columns[1].HeaderText = "선수 유형";
-            this.Gridshow.Columns[2].HeaderText = "이름";
-            this.Gridshow.Columns[3].HeaderText = "키";
-            this.Gridshow.Columns[4].HeaderText = "몸무게";
-            this.Gridshow.Columns[5].HeaderText = "2021년 WAR";
-            this.Gridshow.Columns[6].HeaderText = "2020년 WAR";
+            this.Gridshow.Columns[2].HeaderText = "투타 유형";
+            this.Gridshow.Columns[3].HeaderText = "이름";
+            this.Gridshow.Columns[4].HeaderText = "키";
+            this.Gridshow.Columns[5].HeaderText = "몸무게";
+            this.Gridshow.Columns[6].HeaderText = "2021년 WAR";
+            this.Gridshow.Columns[7].HeaderText = "2020년 WAR";
         }
     }
 }

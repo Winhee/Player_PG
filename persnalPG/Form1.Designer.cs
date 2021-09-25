@@ -54,10 +54,12 @@ namespace persnalPG
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btNew = new System.Windows.Forms.Button();
             this.btreset = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.Gridshow)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -152,14 +154,14 @@ namespace persnalPG
             // 
             // Gridshow
             // 
+            this.Gridshow.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.Gridshow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Gridshow.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Gridshow.Location = new System.Drawing.Point(0, 372);
+            this.Gridshow.Location = new System.Drawing.Point(3, 16);
             this.Gridshow.Name = "Gridshow";
             this.Gridshow.RowTemplate.Height = 23;
-            this.Gridshow.Size = new System.Drawing.Size(888, 130);
+            this.Gridshow.Size = new System.Drawing.Size(882, 185);
             this.Gridshow.TabIndex = 5;
-            this.Gridshow.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.Gridshow_RowValidated);
             // 
             // groupBox1
             // 
@@ -313,7 +315,7 @@ namespace persnalPG
             // 
             // btreset
             // 
-            this.btreset.Location = new System.Drawing.Point(669, 276);
+            this.btreset.Location = new System.Drawing.Point(118, 276);
             this.btreset.Name = "btreset";
             this.btreset.Size = new System.Drawing.Size(82, 26);
             this.btreset.TabIndex = 4;
@@ -321,14 +323,25 @@ namespace persnalPG
             this.btreset.UseVisualStyleBackColor = true;
             this.btreset.Click += new System.EventHandler(this.btreset_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.Gridshow);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Location = new System.Drawing.Point(0, 372);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(888, 204);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "선수DATA";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(888, 502);
+            this.ClientSize = new System.Drawing.Size(888, 576);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.Gridshow);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -340,6 +353,7 @@ namespace persnalPG
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picball)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,7 +369,6 @@ namespace persnalPG
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtname;
         private System.Windows.Forms.Button btserch;
-        private System.Windows.Forms.DataGridView Gridshow;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -371,6 +384,8 @@ namespace persnalPG
         private System.Windows.Forms.PictureBox picball;
         private System.Windows.Forms.Label lbTetc;
         private System.Windows.Forms.Button btNew;
+        public System.Windows.Forms.DataGridView Gridshow;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 
