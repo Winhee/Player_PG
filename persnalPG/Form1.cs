@@ -37,7 +37,7 @@ namespace persnalPG
             //SQl 명령어
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "SELECT TEAM,STYLE,RLSTYLE,NAME,HIGHT,WEIGHT,THISWAR,WASWAR FROM player WHERE TEAM='"+cboteam.Text+"' AND STYLE='" +cboplayst.Text+"' AND NAME='"+txtname.Text+"'";
+            cmd.CommandText = "SELECT TEAM,STYLE,RLSTYLE,NAME,HIGHT,WEIGHT,THISWAR,WASWAR FROM player WHERE TEAM='"+cboteam.Text+"' AND STYLE='" +cboplayst.Text+"' AND RLSTYLE='"+txtRL.Text+"' AND NAME='"+txtname.Text+"'";
 
             //DataAdapter와 Dataset으로 DB table 불러오기
             SqlDataAdapter da = new SqlDataAdapter(cmd);    //select구문 넣기

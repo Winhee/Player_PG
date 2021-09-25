@@ -55,6 +55,8 @@ namespace persnalPG
             this.btNew = new System.Windows.Forms.Button();
             this.btreset = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtRL = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Gridshow)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picball)).BeginInit();
@@ -105,7 +107,7 @@ namespace persnalPG
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 109);
+            this.label3.Location = new System.Drawing.Point(12, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 15);
             this.label3.TabIndex = 2;
@@ -118,7 +120,7 @@ namespace persnalPG
             "투수",
             "포수",
             "야수"});
-            this.cboplayst.Location = new System.Drawing.Point(12, 127);
+            this.cboplayst.Location = new System.Drawing.Point(12, 105);
             this.cboplayst.Name = "cboplayst";
             this.cboplayst.Size = new System.Drawing.Size(154, 23);
             this.cboplayst.TabIndex = 1;
@@ -127,7 +129,7 @@ namespace persnalPG
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 187);
+            this.label4.Location = new System.Drawing.Point(12, 202);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 15);
             this.label4.TabIndex = 2;
@@ -135,7 +137,7 @@ namespace persnalPG
             // 
             // txtname
             // 
-            this.txtname.Location = new System.Drawing.Point(12, 205);
+            this.txtname.Location = new System.Drawing.Point(12, 220);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(174, 23);
             this.txtname.TabIndex = 3;
@@ -182,8 +184,10 @@ namespace persnalPG
             this.groupBox1.Controls.Add(this.btserch);
             this.groupBox1.Controls.Add(this.cboteam);
             this.groupBox1.Controls.Add(this.cboplayst);
+            this.groupBox1.Controls.Add(this.txtRL);
             this.groupBox1.Controls.Add(this.txtname);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(0, 53);
@@ -334,6 +338,23 @@ namespace persnalPG
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "선수DATA";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 150);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 15);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "투타 유형";
+            // 
+            // txtRL
+            // 
+            this.txtRL.Location = new System.Drawing.Point(12, 168);
+            this.txtRL.Name = "txtRL";
+            this.txtRL.Size = new System.Drawing.Size(174, 23);
+            this.txtRL.TabIndex = 3;
+            this.txtRL.Click += new System.EventHandler(this.txtname_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -386,6 +407,8 @@ namespace persnalPG
         private System.Windows.Forms.Button btNew;
         public System.Windows.Forms.DataGridView Gridshow;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtRL;
+        private System.Windows.Forms.Label label9;
     }
 }
 
