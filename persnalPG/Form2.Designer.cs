@@ -67,7 +67,7 @@ namespace persnalPG
             this.cboTeam.Location = new System.Drawing.Point(29, 97);
             this.cboTeam.Name = "cboTeam";
             this.cboTeam.Size = new System.Drawing.Size(210, 20);
-            this.cboTeam.TabIndex = 4;
+            this.cboTeam.TabIndex = 1;
             this.cboTeam.Text = "구단 선택";
             // 
             // cboplayst
@@ -80,7 +80,7 @@ namespace persnalPG
             this.cboplayst.Location = new System.Drawing.Point(29, 153);
             this.cboplayst.Name = "cboplayst";
             this.cboplayst.Size = new System.Drawing.Size(104, 20);
-            this.cboplayst.TabIndex = 5;
+            this.cboplayst.TabIndex = 2;
             this.cboplayst.Text = "선수 유형 선택";
             // 
             // txtname
@@ -88,7 +88,7 @@ namespace persnalPG
             this.txtname.Location = new System.Drawing.Point(29, 207);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(210, 21);
-            this.txtname.TabIndex = 9;
+            this.txtname.TabIndex = 4;
             this.txtname.Text = "외국인선수는 선수명(성) 입력";
             this.txtname.Click += new System.EventHandler(this.txtname_Click);
             // 
@@ -143,7 +143,7 @@ namespace persnalPG
             this.txtWAR.Location = new System.Drawing.Point(27, 324);
             this.txtWAR.Name = "txtWAR";
             this.txtWAR.Size = new System.Drawing.Size(88, 21);
-            this.txtWAR.TabIndex = 9;
+            this.txtWAR.TabIndex = 7;
             // 
             // label6
             // 
@@ -159,7 +159,7 @@ namespace persnalPG
             this.txtpastyear.Location = new System.Drawing.Point(143, 324);
             this.txtpastyear.Name = "txtpastyear";
             this.txtpastyear.Size = new System.Drawing.Size(96, 21);
-            this.txtpastyear.TabIndex = 9;
+            this.txtpastyear.TabIndex = 8;
             // 
             // label7
             // 
@@ -175,7 +175,7 @@ namespace persnalPG
             this.txthight.Location = new System.Drawing.Point(29, 265);
             this.txthight.Name = "txthight";
             this.txthight.Size = new System.Drawing.Size(85, 21);
-            this.txthight.TabIndex = 9;
+            this.txthight.TabIndex = 5;
             // 
             // label8
             // 
@@ -191,14 +191,14 @@ namespace persnalPG
             this.txtweight.Location = new System.Drawing.Point(141, 265);
             this.txtweight.Name = "txtweight";
             this.txtweight.Size = new System.Drawing.Size(96, 21);
-            this.txtweight.TabIndex = 9;
+            this.txtweight.TabIndex = 6;
             // 
             // btSave
             // 
             this.btSave.Location = new System.Drawing.Point(140, 366);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(104, 23);
-            this.btSave.TabIndex = 11;
+            this.btSave.TabIndex = 10;
             this.btSave.Text = "저장";
             this.btSave.UseVisualStyleBackColor = true;
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
@@ -208,7 +208,7 @@ namespace persnalPG
             this.button4.Location = new System.Drawing.Point(11, 366);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(104, 23);
-            this.button4.TabIndex = 11;
+            this.button4.TabIndex = 9;
             this.button4.Text = "네이버 검색";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -227,7 +227,7 @@ namespace persnalPG
             this.txtRL.Location = new System.Drawing.Point(143, 153);
             this.txtRL.Name = "txtRL";
             this.txtRL.Size = new System.Drawing.Size(96, 21);
-            this.txtRL.TabIndex = 9;
+            this.txtRL.TabIndex = 3;
             // 
             // Form2
             // 

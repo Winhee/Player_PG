@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -55,6 +56,7 @@ namespace persnalPG
             this.Gridshow.Columns[5].HeaderText = "몸무게";
             this.Gridshow.Columns[6].HeaderText = "2021년 WAR";
             this.Gridshow.Columns[7].HeaderText = "2020년 WAR";
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -220,6 +222,96 @@ namespace persnalPG
             this.Gridshow.Columns[5].HeaderText = "몸무게";
             this.Gridshow.Columns[6].HeaderText = "2021년 WAR";
             this.Gridshow.Columns[7].HeaderText = "2020년 WAR";
+
+        }
+
+        private void btdelete_Click(object sender, EventArgs e)
+        {
+           
+            if (MessageBox.Show("선택된 행을 삭제하시겠습니까?", "삭제", MessageBoxButtons.YesNo)==DialogResult.Yes)   //메시지창을 띄워서 yes 결과일 경우
+            {
+                DataGridViewRow row = Gridshow.SelectedRows[0];
+                string name = row.Cells[3].Value.ToString();
+                //SQL DB연결
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = @"Server=localhost;database=PlayerPG; uid=sa; pwd=612500";
+                SqlCommand cmd = new SqlCommand();
+
+
+                try
+                {
+                    conn.Open();
+                    //SQl 명령어
+                    cmd.Connection = conn;
+                    cmd.CommandText = "DELETE FROM PLAYER WHERE NAME='" + name + "'";
+                    cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    MessageBox.Show("삭제되었습니다.");
+                }
+                finally
+                {
+                   
+                    //SQl 명령어
+                    cmd.Connection = conn;
+                    cmd.CommandText = "SELECT TEAM,STYLE,RLSTYLE,NAME,HIGHT,WEIGHT,THISWAR,WASWAR FROM player";
+
+                    //DataAdapter와 Dataset으로 DB table 불러오기
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);    //select구문 넣기
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "player");
+
+                    //DataGridView에 DB에서 가져온 데이터 뿌리기
+                    Gridshow.DataSource = ds;
+                    Gridshow.DataMember = "player";
+                    this.Gridshow.Columns[0].HeaderText = "구단명";
+                    this.Gridshow.Columns[1].HeaderText = "선수 유형";
+                    this.Gridshow.Columns[2].HeaderText = "투타 유형";
+                    this.Gridshow.Columns[3].HeaderText = "이름";
+                    this.Gridshow.Columns[4].HeaderText = "키";
+                    this.Gridshow.Columns[5].HeaderText = "몸무게";
+                    this.Gridshow.Columns[6].HeaderText = "2021년 WAR";
+                    this.Gridshow.Columns[7].HeaderText = "2020년 WAR";
+
+                    conn.Close();
+                }
+            }
+            else
+            {
+                //SQL DB연결
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = @"Server=localhost;database=PlayerPG; uid=sa; pwd=612500";
+
+                //SQl 명령어
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT TEAM,STYLE,RLSTYLE,NAME,HIGHT,WEIGHT,THISWAR,WASWAR FROM player";
+
+                //DataAdapter와 Dataset으로 DB table 불러오기
+                SqlDataAdapter da = new SqlDataAdapter(cmd);    //select구문 넣기
+                DataSet ds = new DataSet();
+                da.Fill(ds, "player");
+
+                //DataGridView에 DB에서 가져온 데이터 뿌리기
+                Gridshow.DataSource = ds;
+                Gridshow.DataMember = "player";
+                this.Gridshow.Columns[0].HeaderText = "구단명";
+                this.Gridshow.Columns[1].HeaderText = "선수 유형";
+                this.Gridshow.Columns[2].HeaderText = "투타 유형";
+                this.Gridshow.Columns[3].HeaderText = "이름";
+                this.Gridshow.Columns[4].HeaderText = "키";
+                this.Gridshow.Columns[5].HeaderText = "몸무게";
+                this.Gridshow.Columns[6].HeaderText = "2021년 WAR";
+                this.Gridshow.Columns[7].HeaderText = "2020년 WAR";
+
+                conn.Close();
+            }
+        }
+
+        private void linkTpage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(linkTpage.Text);
         }
     }
 }

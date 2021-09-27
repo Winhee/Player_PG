@@ -54,14 +54,16 @@ namespace persnalPG
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btNew = new System.Windows.Forms.Button();
             this.btreset = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtRL = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btdelete = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Gridshow)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btdelete)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -123,7 +125,7 @@ namespace persnalPG
             this.cboplayst.Location = new System.Drawing.Point(12, 105);
             this.cboplayst.Name = "cboplayst";
             this.cboplayst.Size = new System.Drawing.Size(154, 23);
-            this.cboplayst.TabIndex = 1;
+            this.cboplayst.TabIndex = 2;
             this.cboplayst.Text = "선수 유형 선택";
             // 
             // label4
@@ -140,7 +142,7 @@ namespace persnalPG
             this.txtname.Location = new System.Drawing.Point(12, 220);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(174, 23);
-            this.txtname.TabIndex = 3;
+            this.txtname.TabIndex = 4;
             this.txtname.Text = "외국인선수는 선수명(성) 입력";
             this.txtname.Click += new System.EventHandler(this.txtname_Click);
             // 
@@ -149,7 +151,7 @@ namespace persnalPG
             this.btserch.Location = new System.Drawing.Point(794, 276);
             this.btserch.Name = "btserch";
             this.btserch.Size = new System.Drawing.Size(82, 26);
-            this.btserch.TabIndex = 4;
+            this.btserch.TabIndex = 6;
             this.btserch.Text = "검색";
             this.btserch.UseVisualStyleBackColor = true;
             this.btserch.Click += new System.EventHandler(this.btserch_Click);
@@ -162,6 +164,7 @@ namespace persnalPG
             this.Gridshow.Location = new System.Drawing.Point(3, 16);
             this.Gridshow.Name = "Gridshow";
             this.Gridshow.RowTemplate.Height = 23;
+            this.Gridshow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Gridshow.Size = new System.Drawing.Size(882, 185);
             this.Gridshow.TabIndex = 5;
             // 
@@ -232,6 +235,7 @@ namespace persnalPG
             this.linkTpage.TabIndex = 9;
             this.linkTpage.TabStop = true;
             this.linkTpage.Text = "클릭";
+            this.linkTpage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkTpage_LinkClicked);
             // 
             // picball
             // 
@@ -312,7 +316,7 @@ namespace persnalPG
             this.btNew.Location = new System.Drawing.Point(12, 276);
             this.btNew.Name = "btNew";
             this.btNew.Size = new System.Drawing.Size(82, 26);
-            this.btNew.TabIndex = 4;
+            this.btNew.TabIndex = 7;
             this.btNew.Text = "신규입력";
             this.btNew.UseVisualStyleBackColor = true;
             this.btNew.Click += new System.EventHandler(this.button1_Click);
@@ -322,10 +326,27 @@ namespace persnalPG
             this.btreset.Location = new System.Drawing.Point(118, 276);
             this.btreset.Name = "btreset";
             this.btreset.Size = new System.Drawing.Size(82, 26);
-            this.btreset.TabIndex = 4;
+            this.btreset.TabIndex = 5;
             this.btreset.Text = "내용지우기";
             this.btreset.UseVisualStyleBackColor = true;
             this.btreset.Click += new System.EventHandler(this.btreset_Click);
+            // 
+            // txtRL
+            // 
+            this.txtRL.Location = new System.Drawing.Point(12, 168);
+            this.txtRL.Name = "txtRL";
+            this.txtRL.Size = new System.Drawing.Size(174, 23);
+            this.txtRL.TabIndex = 3;
+            this.txtRL.Click += new System.EventHandler(this.txtname_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 150);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 15);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "투타 유형";
             // 
             // groupBox2
             // 
@@ -338,22 +359,15 @@ namespace persnalPG
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "선수DATA";
             // 
-            // label9
+            // btdelete
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 150);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 15);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "투타 유형";
-            // 
-            // txtRL
-            // 
-            this.txtRL.Location = new System.Drawing.Point(12, 168);
-            this.txtRL.Name = "txtRL";
-            this.txtRL.Size = new System.Drawing.Size(174, 23);
-            this.txtRL.TabIndex = 3;
-            this.txtRL.Click += new System.EventHandler(this.txtname_Click);
+            this.btdelete.Image = ((System.Drawing.Image)(resources.GetObject("btdelete.Image")));
+            this.btdelete.Location = new System.Drawing.Point(826, 7);
+            this.btdelete.Name = "btdelete";
+            this.btdelete.Size = new System.Drawing.Size(50, 50);
+            this.btdelete.TabIndex = 8;
+            this.btdelete.TabStop = false;
+            this.btdelete.Click += new System.EventHandler(this.btdelete_Click);
             // 
             // Form1
             // 
@@ -361,6 +375,7 @@ namespace persnalPG
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(888, 576);
+            this.Controls.Add(this.btdelete);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -375,6 +390,7 @@ namespace persnalPG
             ((System.ComponentModel.ISupportInitialize)(this.picball)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btdelete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,6 +425,7 @@ namespace persnalPG
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtRL;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox btdelete;
     }
 }
 
